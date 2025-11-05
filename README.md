@@ -1,6 +1,7 @@
 # Star Wars Explorer
 
 ### A responsive React + Vite web app that lets you explore Star Wars characters using the SWAPI API.
+
 ### It includes pagination, dynamic visuals, detailed modals, and extra features like searching, filtering, and mock authentication.
 
 > Note: Access tokens expire after 10 minutes and refresh tokens after 30 minutes, mimicking real JWT lifecycle for silent refresh testing.
@@ -10,27 +11,33 @@
 ## ✨ How to Run the Project
 
 #### 1. Clone the Repository
+
     `git clone https://github.com/sumit-1510-sharma/Zippee-Frontend-Assignment.git`
 
 #### 2. Navigate to the Project Directory
+
     `cd Zippee-Frontend-Assignment`
 
 #### 3. Install Dependencies
+
     `npm install`
 
 #### 4. Run the Development Server
+
     `npm run dev`
 
 #### 5. Open in Browser
+
     Visit the URL shown in your terminal (usually http://localhost:5173).
 
 ### OR
 
 #### 1. Just go to the deployed link (vercel) to see the website working<br>
+
     link: https://zippee-frontend-assignment.vercel.app/
 
-
 ## ✨ What I Implemented<br>
+
 ### Core Features
 
 1. Star Wars Characters Data — fetched dynamically from SWAPI API.
