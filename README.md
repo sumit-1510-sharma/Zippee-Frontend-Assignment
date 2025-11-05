@@ -3,7 +3,9 @@
 ### A responsive React + Vite web app that lets you explore Star Wars characters using the SWAPI API.
 ### It includes pagination, dynamic visuals, detailed modals, and extra features like searching, filtering, and mock authentication.
 
+> Note: Access tokens expire after 10 minutes and refresh tokens after 30 minutes, mimicking real JWT lifecycle for silent refresh testing.
 
+<br>
 
 ## ✨ How to Run the Project
 
@@ -25,7 +27,7 @@
 ### OR
 
 #### 1. Just go to the deployed link (vercel) to see the website working<br>
-    link: 
+    link: https://zippee-frontend-assignment.vercel.app/
 
 
 ## ✨ What I Implemented<br>
