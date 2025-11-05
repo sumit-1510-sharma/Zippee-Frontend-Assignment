@@ -17,8 +17,8 @@ export const mockAuthService = {
     await new Promise((r) => setTimeout(r, 400));
     if (username === "demo" && password === "password") {
       const now = Math.floor(Date.now() / 1000);
-      const accessExp = now + 300;
-      const refreshExp = now + 500;
+      const accessExp = now + 600;
+      const refreshExp = now + 1800;
 
       const accessToken = makeFakeJwt({
         sub: "demo-user-id",

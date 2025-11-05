@@ -1,16 +1,54 @@
-# React + Vite
+# Star Wars Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### A responsive React + Vite web app that lets you explore Star Wars characters using the SWAPI API.
+### It includes pagination, dynamic visuals, detailed modals, and extra features like searching, filtering, and mock authentication.
 
-Currently, two official plugins are available:
+> Note: Access tokens expire after 10 minutes and refresh tokens after 30 minutes, mimicking real JWT lifecycle for silent refresh testing.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br>
 
-## React Compiler
+## ✨ How to Run the Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+#### 1. Clone the Repository
+    `git clone https://github.com/sumit-1510-sharma/Zippee-Frontend-Assignment.git`
 
-## Expanding the ESLint configuration
+#### 2. Navigate to the Project Directory
+    `cd Zippee-Frontend-Assignment`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### 3. Install Dependencies
+    `npm install`
+
+#### 4. Run the Development Server
+    `npm run dev`
+
+#### 5. Open in Browser
+    Visit the URL shown in your terminal (usually http://localhost:5173).
+
+### OR
+
+#### 1. Just go to the deployed link (vercel) to see the website working<br>
+    link: https://zippee-frontend-assignment.vercel.app/
+
+
+## ✨ What I Implemented<br>
+### Core Features
+
+1. Star Wars Characters Data — fetched dynamically from SWAPI API.
+2. Pagination — displays 10 characters per page, matching the API’s pagination structure.
+3. Loading & Error Handling — clear states for fetching and API errors.
+4. Dynamic Images — each character displays a random but consistent image from Picsum Photos.
+5. Distinct Background Colors — card colors change based on species.
+6. Detailed Modal — clicking a card opens a modal showing more info (including formatted Homeworld details).
+7. Responsive Design — optimized for all screen sizes.
+
+### Bonus Features
+
+1. Search — supports partial name matching.
+2. Filters — filter characters by Homeworld, Film, or Species.
+3. Combined Search & Filters — works together for refined results (within the current page).
+4. Mock Authentication — implemented using a mock JWT token system.
+
+## ✨ Trade-offs & Design Choices
+
+Trade-off: Combined search and filtering currently apply only to characters on the current page because the app doesn’t store all data from every page in local state.
+Possible Solution: Fetch and cache all pages’ data once (or implement server-side filtering) to enable global filtering and search.

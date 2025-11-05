@@ -23,42 +23,42 @@ export default function StarWarsCharacters() {
 
   const speciesColors = useMemo(
     () => ({
-      Human: "bg-blue-700",
-      Droid: "bg-gray-700",
-      Wookiee: "bg-amber-700",
-      Rodian: "bg-green-700",
-      Hutt: "bg-yellow-700",
-      "Yoda's species": "bg-lime-700",
-      Trandoshan: "bg-green-800",
-      MonCalamari: "bg-sky-700",
-      Ewok: "bg-orange-700",
-      Sullustan: "bg-stone-700",
-      Neimodian: "bg-teal-700",
-      Gungan: "bg-cyan-700",
-      Toydarian: "bg-indigo-700",
-      Dug: "bg-red-700",
-      "Twi'lek": "bg-fuchsia-700",
-      Kaleesh: "bg-rose-700",
-      Kaminoan: "bg-slate-700",
-      Geonosian: "bg-amber-800",
-      Clawdite: "bg-emerald-700",
-      Togruta: "bg-purple-700",
-      Mirialan: "bg-green-600",
-      Zabrak: "bg-red-800",
-      "Kel Dor": "bg-orange-800",
-      Chagrian: "bg-blue-800",
-      Quarren: "bg-teal-800",
-      Nautolan: "bg-emerald-800",
-      Cerean: "bg-yellow-800",
-      Besalisk: "bg-stone-800",
-      Iktotchi: "bg-pink-700",
-      Tholothian: "bg-indigo-800",
-      Vulptereen: "bg-red-600",
-      Aleena: "bg-teal-600",
-      Lannik: "bg-amber-600",
-      Xexto: "bg-emerald-600",
-      Skakoan: "bg-cyan-600",
-      "Togruta (Alt)": "bg-purple-600",
+      Human: "bg-sky-700",
+      Droid: "bg-yellow-800",
+      Wookiee: "bg-[#454d32]",
+      Rodian: "bg-[#45615a]",
+      Hutt: "bg-[#625f46]",
+      "Yoda's species": "bg-[#55683b]",
+      Trandoshan: "bg-[#3b5054]",
+      MonCalamari: "bg-[#45626d]",
+      Ewok: "bg-[#74624a]",
+      Sullustan: "bg-[#494949]",
+      Neimodian: "bg-[#374c4c]",
+      Gungan: "bg-[#458288]",
+      Toydarian: "bg-[#4c5070]",
+      Dug: "bg-[#663e47]",
+      "Twi'lek": "bg-[#7c587d]",
+      Kaleesh: "bg-[#725a68]",
+      Kaminoan: "bg-[#485259]",
+      Geonosian: "bg-[#808271]",
+      Clawdite: "bg-[#50736f]",
+      Togruta: "bg-[#635370]",
+      Mirialan: "bg-[#647d65]",
+      Zabrak: "bg-[#703d41]",
+      "Kel Dor": "bg-[#85644b]",
+      Chagrian: "bg-[#3a4a63]",
+      Quarren: "bg-[#455c5c]",
+      Nautolan: "bg-[#36615f]",
+      Cerean: "bg-[#868261]",
+      Besalisk: "bg-[#4b4b49]",
+      Iktotchi: "bg-[#816178]",
+      Tholothian: "bg-[#57607c]",
+      Vulptereen: "bg-[#675459]",
+      Aleena: "bg-[#478080]",
+      Lannik: "bg-[#938f5b]",
+      Xexto: "bg-[#5c7c76]",
+      Skakoan: "bg-[#7badb2]",
+      "Togruta (Alt)": "bg-[#766b8a]",
     }),
     []
   );
@@ -75,6 +75,10 @@ export default function StarWarsCharacters() {
     const fetchCharacters = async () => {
       setLoading(true);
       setError("");
+      setSearchTerm("");
+      setSelectedHomeworld("");
+      setSelectedFilm("");
+      setSelectedSpecies("");
       try {
         const res = await fetch(`https://swapi.dev/api/people/?page=${page}`);
         if (!res.ok) throw new Error("Failed to fetch character list");
@@ -127,9 +131,17 @@ export default function StarWarsCharacters() {
         const filmSet = new Set(
           withDetails.flatMap((c) => c.filmsData.map((f) => f.title))
         );
-        const spSet = new Set(
-          withDetails.flatMap((c) => c.speciesData.map((s) => s.name))
+
+        const nonHumanSpecies = withDetails.flatMap((c) =>
+          c.speciesData.map((s) => s.name)
         );
+        const hasHuman = withDetails.some(
+          (c) => !c.speciesData || c.speciesData.length === 0
+        );
+        const spSet = new Set(nonHumanSpecies);
+        if (hasHuman) {
+          spSet.add("Human");
+        }
 
         setHomeworlds([...hwSet]);
         setFilms([...filmSet]);
