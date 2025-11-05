@@ -51,4 +51,5 @@
 ## ✨ Trade-offs & Design Choices
 
 Trade-off: Combined search and filtering currently apply only to characters on the current page because the app doesn’t store all data from every page in local state.
+<br>
 Possible Solution: Fetch and cache all pages’ data once (or implement server-side filtering) to enable global filtering and search.
