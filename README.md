@@ -5,7 +5,7 @@ It includes pagination, dynamic visuals, detailed modals, and extra features lik
 
 
 
-How to Run the Project
+✨ How to Run the Project
 
 1. Clone the Repository
     git clone https://github.com/sumit-1510-sharma/Zippee-Frontend-Assignment.git
@@ -22,7 +22,7 @@ How to Run the Project
 5. Open in Browser
     Visit the URL shown in your terminal (usually http://localhost:5173).
 
-                                        OR
+OR
 
 1. Just go to the deployed link (vercel) to see the website working
     link: 
@@ -46,7 +46,7 @@ Bonus Features
 3. Combined Search & Filters — works together for refined results (within the current page).
 4. Mock Authentication — implemented using a mock JWT token system.
 
-⚖️ Trade-offs & Design Choices
+✨ Trade-offs & Design Choices
 
 Trade-off: Combined search and filtering currently apply only to characters on the current page because the app doesn’t store all data from every page in local state.
 Possible Solution: Fetch and cache all pages’ data once (or implement server-side filtering) to enable global filtering and search.
