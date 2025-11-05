@@ -12,19 +12,19 @@
 
 #### 1. Clone the Repository
 
-    `git clone https://github.com/sumit-1510-sharma/Zippee-Frontend-Assignment.git`
+    git clone https://github.com/sumit-1510-sharma/Zippee-Frontend-Assignment.git
 
 #### 2. Navigate to the Project Directory
 
-    `cd Zippee-Frontend-Assignment`
+    cd Zippee-Frontend-Assignment
 
 #### 3. Install Dependencies
 
-    `npm install`
+    npm install
 
 #### 4. Run the Development Server
 
-    `npm run dev`
+    npm run dev
 
 #### 5. Open in Browser
 
